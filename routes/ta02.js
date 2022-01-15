@@ -18,7 +18,7 @@ const users = ['Bermon', 'Fulgence', 'Zarry', 'Felipe', 'Adam'];
 // 2. Using the “/addUser” POST path, render push the new username from the form submission into the existing user array, and then redirect to "/ta02/" to display the modified array.
 router.post('/addUser', (req, res, next) => {
   const newUser = req.body.newUser;
-  userArray.push(newUser);
+  users.push(newUser);
   res.redirect('/ta02/');
 });
 
@@ -26,7 +26,7 @@ router.post('/addUser', (req, res, next) => {
 // For requirement 03 of TA02
 router.post('/removeUser', (req, res, next) => {
   const removeUser = req.body.removeUser;
-  const index = userArray.indexOf(removeUser);
+  const index = users.indexOf(removeUser);
 
   if (index !== -1) {
     users.splice(index, 1); // Built-in JS method for arrays. Let's you change the content of your array by removing or replacing existing elements with new ones
@@ -36,9 +36,9 @@ router.post('/removeUser', (req, res, next) => {
 });
 
 router.get('/', (req, res, next) => {
-  res.render('pages', {
+  res.render('pages/ta02', {
     users: users,
-    title: 'Team Activity 02',
+    title: 'Team Activity 02 - Completed',
     path: '/ta02', // For pug, EJS
     activeTA03: true, // For HBS
     contentCSS: true, // For HBS
