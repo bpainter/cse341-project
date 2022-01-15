@@ -1,3 +1,8 @@
+<!-- 
+  01 Create a Node webpage that will read data from the following json: 'https://byui-cse.github.io/cse341-course/lesson03/items.json'.
+  02 - Display data in a professional manner.
+  03 - Incorporate a way to search through the data and only display associated search results. -->
+
 <!DOCTYPE html>
 <html>
 
@@ -12,10 +17,31 @@
         <h1>
           <%= title %>
         </h1>
-        <p>This is the placeholder for Team Activity 03</p>
       </div>
     </div>
     <div class="container">
+
+      <h2>Items</h2>
+      
+      <form>
+        <input type="search" />
+        <button>Filter</button>
+      </form>
+
+      <ul class="items">
+        <% for(var i=0; i<items.length; i++) {%>
+          <li class="item">
+            <img src="<%= items[i].imageUrl %>" alt="" class="item-image" />
+            <h3 class="item-title"><%= items[i].name %></h3>
+            <p class="item-description"><%= items[i].description %></p>
+            <p class="item-price"><%= items[i].price %></p>
+
+            <ul class="item-tags">
+              <li class="item-tag"></li>
+            </ul>
+          </li>
+        <% } %>
+      </ul>
 
     </div>
 

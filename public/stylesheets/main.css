@@ -41,3 +41,35 @@
   width: 5rem;
   height: 5rem;
 }
+
+/* Items */
+/* Team Assignment Week 3: 02 - Display data in a professional manner. */
+.items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px 12px;
+  list-style: none;
+  margin: 12px 0 0 0;
+  padding: 0;
+}
+.item {
+  background-color: #ccc;
+  border-color: rgb(185, 185, 185);
+  border-radius: 2px;
+  padding: 1em;
+  max-width: 23.9%;
+}
+.item-image {
+ width: 100%;
+}
+.item-title {}
+.item-description {}
+.item-price {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.item-price:before {
+  content: "$"
+}
